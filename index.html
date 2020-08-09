@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function playerSelection() {
+        const playerSelection = prompt(
+          "Rock, Paper, or Scissors?"
+        ).toLowerCase();
+        return playerSelection;
+      }
+
+      function computerPlay() {
+        let compMove = Math.random();
+        if (compMove <= 0.33) {
+          compMove = "rock";
+        } else if (compMove <= 0.66) {
+          compMove = "paper";
+        } else {
+          compMove = "scissors";
+        }
+        return compMove;
+      }
+
+      function playRound(playerSelection, computerPlay) {
+        // Tie
+        if (playerSelection === computerPlay) {
+          return `You both chose ${playerSelection}. It's a tie!`;
+        }
+
+        // Rock
+        if (playerSelection === "rock" && computerPlay === "scissors") {
+          return "You win! Rock smashes scissors.";
+        } else if (playerSelection === "rock" && computerPlay === "paper") {
+          return "You lose! Paper covers rock.";
+        }
+
+        // Paper
+        if (playerSelection === "paper" && computerPlay === "rock") {
+          return "You win! Paper covers rock.";
+        } else if (playerSelection === "paper" && computerPlay === "scissors") {
+          return "You lose! Scissors cut paper.";
+        }
+
+        // Scissors
+        if (playerSelection === "scissors" && computerPlay === "paper") {
+          return "You win! Scissors cut paper.";
+        } else if (playerSelection === "scissors" && computerPlay === "rock") {
+          return "You lose! Rock smashes scissors.";
+        }
+        return "Invalid selection.";
+      }
+
+      console.log(playRound(playerSelection(), computerPlay()));
+    </script>
+  </body>
+</html>

@@ -1,1 +1,1 @@
-# rock-paper-scissors
+This is my rock, paper, scissors JS project via The Odin Project curriculum. I embedded the JS inside the html file as asked. This is a basic rock, paper, scissors game that runs inside of the console.
